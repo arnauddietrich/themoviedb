@@ -2,25 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Post;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
     public function index(){
 
-        $articles = [
-            [
-                'titre' => 'Mon premier article',
-                'content' => 'bla bla'
-            ],
-            [
-                'titre' => 'Mon deuxième article',
-                'content' => 'bla bla bla'
-            ]
-        ];
-
+        //return view('welcome', []);
         return view('home', [
-            'films' => $articles
+            'films' => Post::all()
         ]);
 
     }

@@ -7,6 +7,23 @@ use Illuminate\Http\Request;
 
 class FilmController extends Controller
 {
+    public function index(){
+
+        //return view('welcome', []);
+        return view('home', [
+            'films' => Film::all()
+        ]);
+
+    }
+
+    public function show(Film $film) {
+
+        return view('film', [
+            'article' => $film
+        ]);
+
+    }
+    
     public function create() {
 
         $curl = curl_init();
